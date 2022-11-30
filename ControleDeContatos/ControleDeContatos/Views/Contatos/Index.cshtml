@@ -2,10 +2,29 @@
 @{
     ViewData["Title"] = "Listagem de contatos";
 }
+
+
+
 <div class="text-center">
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a role="button" class="btn btn-success" asp-controller="contatos" asp-action="Criar">Adicionar</a>
     </div>
+    <br/>
+
+    @if (TempData["messagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="fechar">x</button>
+            @TempData["messagemSucesso"]
+        </div>
+    }
+    @if (TempData["messagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="fechar">x</button>
+            @TempData["messagemErro"]
+        </div>
+    }
     <br/>
     <h1 class="display-4">Listagem de contatos</h1>
 

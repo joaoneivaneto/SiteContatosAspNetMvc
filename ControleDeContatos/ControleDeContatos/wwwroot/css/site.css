@@ -17,3 +17,24 @@ body {
   margin-bottom: 60px;
 }
 
+.field-validation-error{
+    color:#e01d1d;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border: none;
+    width: 30px;
+    height: 31px;
+    color: black;
+    background: none;
+    font-size: 20px;
+    font-family: Arial;
+}

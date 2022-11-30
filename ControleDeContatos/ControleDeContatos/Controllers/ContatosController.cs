@@ -1,5 +1,6 @@
 ﻿using ControleDeContatos.Interface;
 using ControleDeContatos.Models;
+using ControleDeContatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControleDeContatos.Controllers
@@ -36,23 +37,71 @@ namespace ControleDeContatos.Controllers
         [HttpPost]
         public IActionResult Criar(ContatoMoldel contato)
         {
-            _contatoRepositorio.Adicionar(contato);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    _contatoRepositorio.Adicionar(contato);
+                    TempData["messagemSucesso"] = "Contato cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+
+                return View(contato);
+            }
+            catch (Exception erro)
+            {
+                TempData["messagemErro"] = $"Ops, não foi possival realizar cadastro do contato, tente novamente, detalhe do erro{erro.Message}";
+                return RedirectToAction("Index");
+            }
+           
         }
 
         public IActionResult Apagar(int id)
         {
-            _contatoRepositorio.Apagar(id);
-
-            return RedirectToAction("index");
+            try
+            {
+                bool apagado = _contatoRepositorio.Apagar(id);
+                if (apagado)
+                {
+                    TempData["messagemSucesso"] = "Contato apagado com sucesso";
+                }
+                else
+                {
+                    TempData["messagemErro"] = $"Ops, não foi possival apagar o contato";
+                }
+                return RedirectToAction("index");
+            }
+            catch (Exception erro)
+            {
+                TempData["messagemErro"] = $"Ops, não foi possival apagar o contato, tente novamente, detalhe do erro{erro.Message}";
+                throw;
+            }
+            
         }
 
         [HttpPost]
         public IActionResult Alterar(ContatoMoldel contato)
         {
-            _contatoRepositorio.Atulizar(contato);
-            return RedirectToAction("index");
+            try
+            {
+                
+                if (ModelState.IsValid)
+                {
+                    _contatoRepositorio.Atulizar(contato);
+                    TempData["messagemSucesso"] = "Contato alterado com sucesso com sucesso";
+                    return RedirectToAction("index");
+                }
+                return View("Editar", contato);
+            }
+            catch (Exception erro)
+            {
+
+                TempData["messagemErro"] = $"Ops, não foi possival alterar cadastro, tente novamente, detalhe do erro{erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
+
 
     }
 }
