@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "76eCBet7IT4wdbyMJAT4tm5ddJI0lRLCENXcZf3Sixw=",
+  "Hash": "PI6tIZwOfqFiaZ6EwvNpg/z5WZc5pqQWFwxk32ktFVg=",
   "Source": "ControleDeContatos",
   "BasePath": "_content/ControleDeContatos",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\workspaces\\relembrando asp.net MVC\\ControleDeContatos\\ControleDeContatos\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\ControleDeContatos.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\workspaces\\relembrando asp.net MVC\\ControleDeContatos\\ControleDeContatos\\wwwroot\\add.svg",
-      "SourceId": "ControleDeContatos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\workspaces\\relembrando asp.net MVC\\ControleDeContatos\\ControleDeContatos\\wwwroot\\",
-      "BasePath": "_content/ControleDeContatos",
-      "RelativePath": "add.svg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\add.svg"
     },
     {
       "Identity": "C:\\workspaces\\relembrando asp.net MVC\\ControleDeContatos\\ControleDeContatos\\wwwroot\\css\\site.css",
